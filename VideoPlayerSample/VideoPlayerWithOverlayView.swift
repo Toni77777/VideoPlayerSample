@@ -13,7 +13,15 @@ struct VideoPlayerWithOverlayView: View {
     let url: URL
 
     var body: some View {
-        VideoPlayer(player: AVPlayer(url: url))
-            .frame(height: 320)
+        VideoPlayer(player: AVPlayer(url: url), videoOverlay: {
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Text("Code sample by ToniDevBlog")
+                        .foregroundColor(.white)
+                }
+            }.padding()
+        }).frame(height: 320)
     }
 }
